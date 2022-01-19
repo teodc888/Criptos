@@ -6,6 +6,8 @@ import Stack from "@mui/material/Stack";
 import CardMercado from "../cardMercado/cardMercado";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
+import { Button } from "@mui/material";
+import { Link } from "react-router-dom";
 const columns = [
   {
     field: "icon",
@@ -59,12 +61,12 @@ export default function Mercado() {
 
   const precioMayor =
     criptos.length > 0
-      ? criptos.reduce((a, b) => (a.priceChange1d > b.priceChange1d ? a : b))
+      ? criptos.reduce((a, b) => (a.priceChange1h > b.priceChange1h ? a : b))
       : null;
 
   const precioMenor =
     criptos.length > 0
-      ? criptos.reduce((a, b) => (a.priceChange1d < b.priceChange1d ? a : b))
+      ? criptos.reduce((a, b) => (a.priceChange1h < b.priceChange1h ? a : b))
       : null;
 
   const mayorVolumen =
@@ -89,6 +91,11 @@ export default function Mercado() {
         spacing={2}
       >
         <h1>MERCADO</h1>
+        <Link to="/">
+          <Button sx={{ color: "white", backgroundColor: "#004d40" }}>
+            Volver
+          </Button>
+        </Link>
         <Box
           sx={{ width: "100%", marginTop: "50px" }}
           alignItems="center"
@@ -96,7 +103,7 @@ export default function Mercado() {
         >
           <Grid
             spacing={{ xs: 4, md: 3 }}
-            columns={{ xs: 2.4 , sm: 8, md: 12 }}
+            columns={{ xs: 2.4, sm: 8, md: 12 }}
             container
             sx={{ marginBottom: "50px" }}
           >
