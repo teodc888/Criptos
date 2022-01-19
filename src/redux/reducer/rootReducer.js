@@ -1,8 +1,13 @@
-import { GET_CRIPTOS, GET_CRIPTOS_TOTAL } from "../actions/actionsTypes";
+import {
+    GET_CRIPTOS,
+    GET_CRIPTOS_TOTAL,
+
+} from "../actions/actionsTypes";
 
 const inicialState = {
     criptos: [],
     criptosTotal: [],
+
 };
 
 export default function rootReducer(state = inicialState, action) {

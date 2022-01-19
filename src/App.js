@@ -12,6 +12,7 @@ function App() {
 
   useEffect(() => {
     dispatch(getCriptosIniciales());
+  
   }, [dispatch]);
 
   return (

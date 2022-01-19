@@ -2,7 +2,7 @@ import axios from "axios";
 
 import {
     GET_CRIPTOS,
-    GET_CRIPTOS_TOTAL
+    GET_CRIPTOS_TOTAL,
 } from "./actionsTypes";
 
 export function getCriptosIniciales() {
@@ -38,3 +38,4 @@ export function getCriptosTotal() {
         }
     };
 }
+
