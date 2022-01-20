@@ -1,7 +1,7 @@
 import "./App.css";
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { getCriptosIniciales } from "./redux/actions";
+import { getCriptosIniciales, getCriptosTotal } from "./redux/actions";
 import {Routes, Route} from 'react-router-dom';
 import NavBar from "./components/navBar/navBar";
 import InicioCripto from "./components/criptomoneda/inicioCripto/inicioCripto";
@@ -12,6 +12,7 @@ function App() {
 
   useEffect(() => {
     dispatch(getCriptosIniciales());
+    dispatch(getCriptosTotal());
   
   }, [dispatch]);
 

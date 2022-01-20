@@ -1,7 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { DataGrid } from "@mui/x-data-grid";
 import { useSelector, useDispatch } from "react-redux";
-import { getCriptosTotal } from "../../../redux/actions";
 import Stack from "@mui/material/Stack";
 import CardMercado from "../cardMercado/cardMercado";
 import Grid from "@mui/material/Grid";
@@ -52,11 +51,6 @@ const columns = [
 ];
 
 export default function Mercado() {
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(getCriptosTotal());
-  }, [dispatch]);
   const criptos = useSelector((state) => state.criptosTotal);
 
   const precioMayor =

@@ -3,6 +3,7 @@ import axios from "axios";
 import {
     GET_CRIPTOS,
     GET_CRIPTOS_TOTAL,
+    SEARCH_CRIPTOS,
 } from "./actionsTypes";
 
 export function getCriptosIniciales() {
@@ -39,3 +40,10 @@ export function getCriptosTotal() {
     };
 }
 
+export function searchCriptos(payload){
+
+    return{
+        type: SEARCH_CRIPTOS,
+        payload
+    }
+}

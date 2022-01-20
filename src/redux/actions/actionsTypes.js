@@ -1,2 +1,3 @@
 export const GET_CRIPTOS = "GET_CRIPTOS";
 export const GET_CRIPTOS_TOTAL = "GET_CRIPTOS_TOTAL";
+export const SEARCH_CRIPTOS = "SEARCH_CRIPTOS"; 
