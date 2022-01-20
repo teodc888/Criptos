@@ -30,7 +30,7 @@ export default function InicioCripto() {
         </div>
         <Box sx={{ flexGrow: 1 }}>
           <Grid container spacing={2} columns={16}>
-            <Grid item xs={8}>
+            <Grid item xs={5.33}>
               <Link to="/mercado">
                 <Button
                   sx={{
@@ -43,7 +43,7 @@ export default function InicioCripto() {
                 </Button>
               </Link>
             </Grid>
-            <Grid item xs={8}>
+            <Grid item xs={5.33}>
               <Link to="/favoritos">
                 <Button
                   sx={{
@@ -53,6 +53,19 @@ export default function InicioCripto() {
                   }}
                 >
                   Ir a Favoritos
+                </Button>
+              </Link>
+            </Grid>
+            <Grid item xs={5.33}>
+              <Link to="/noticias">
+                <Button
+                  sx={{
+                    color: "white",
+                    backgroundColor: "#004d40",
+                    height: "50px",
+                  }}
+                >
+                  Ir a Noticias
                 </Button>
               </Link>
             </Grid>
@@ -78,6 +91,7 @@ export default function InicioCripto() {
                   name={cripto.name}
                   price={cripto.price}
                   symbol={cripto.symbol}
+                  id={cripto.id}
                 />
               </Grid>
             ))}

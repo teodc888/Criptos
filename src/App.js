@@ -6,7 +6,7 @@ import {Routes, Route} from 'react-router-dom';
 import NavBar from "./components/navBar/navBar";
 import InicioCripto from "./components/criptomoneda/inicioCripto/inicioCripto";
 import Mercado from "./components/criptomoneda/mercado/mercado";
-
+import CriptoOnly from "./components/criptoOnly/criptoOnly";
 function App() {
   const dispatch = useDispatch();
 
@@ -22,6 +22,7 @@ function App() {
       <Routes>
         <Route path="/" element={<InicioCripto />} />
         <Route path="/mercado" element={<Mercado />} />
+        <Route path="/cripto/:id" element={<CriptoOnly />} />
       </Routes>
     </div>
   );

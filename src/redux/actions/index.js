@@ -4,6 +4,7 @@ import {
     GET_CRIPTOS,
     GET_CRIPTOS_TOTAL,
     SEARCH_CRIPTOS,
+    GET_CRIPTO_ONLY,
 } from "./actionsTypes";
 
 export function getCriptosIniciales() {
@@ -47,3 +48,21 @@ export function searchCriptos(payload){
         payload
     }
 }
+
+export function getCriptoOnly(cripto) {
+    return async function (dispatch) {
+      try {
+        let res = await axios(
+          `https://api.coinstats.app/public/v1/coins/${cripto}?currency=USD`
+        );
+  
+        return dispatch({
+          type: GET_CRIPTO_ONLY,
+          payload: res.data.coin,
+        });
+      } catch (error) {
+        console.log(error);
+      }
+    };
+  }
+  

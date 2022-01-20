@@ -15,6 +15,7 @@ export default function Panel() {
                 price={cripto.price}
                 icon={cripto.icon}
                 symbol={cripto.symbol}
+                id={cripto.id}
                 />
             ))
             :

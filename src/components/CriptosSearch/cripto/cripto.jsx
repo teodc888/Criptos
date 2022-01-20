@@ -4,10 +4,12 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import CardMedia from '@mui/material/CardMedia';
+import { Link } from 'react-router-dom';
 
 
 export default function CriptoShearch(props) {
   return (
+    <Link to={`/cripto/${props.id}`}>
     <Card sx={{ maxWidth: 350, margin:"auto", marginBottom:"1%"}}>
       <CardMedia
         component="img"
@@ -24,5 +26,6 @@ export default function CriptoShearch(props) {
         </Typography>
       </CardContent>
     </Card>
+    </Link>
   );
 }

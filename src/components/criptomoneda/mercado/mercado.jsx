@@ -14,39 +14,41 @@ const columns = [
     width: 110,
     renderCell: (params) => <img src={params.value} />,
   },
-  { field: "symbol", headerName: "ID", width: 100 },
+  { field: "symbol", headerName: "ID", width: 100,
+},
+  
   {
-    field: "name",
+    field: "id",
     headerName: "Nombre",
     width: 210,
-    editable: true,
+    renderCell: (params) => <Link to={`/cripto/${params.value}`}>{params.value}</Link>,
   },
   {
     field: "price",
     headerName: "Precio",
     width: 310,
-    editable: true,
+
   },
   {
     field: "priceChange1d",
     headerName: "24 horas cambio",
     type: "number",
     width: 210,
-    editable: true,
+
   },
   {
     field: "volume",
     headerName: "24 horas Valumen",
     type: "number",
     width: 410,
-    editable: true,
+
   },
   {
     field: "marketCap",
     headerName: "Capacidad Mercado",
     type: "number",
     width: 410,
-    editable: true,
+
   },
 ];
 
@@ -109,6 +111,7 @@ export default function Mercado() {
                   icon={precioMayor.icon}
                   priceChange1d={precioMayor.priceChange1d}
                   precio={"Precio Mayor"}
+                  id={precioMayor.id}
                 />
               </Grid>
             ) : null}
@@ -120,6 +123,7 @@ export default function Mercado() {
                   icon={precioMenor.icon}
                   priceChange1d={precioMenor.priceChange1d}
                   precio={"Precio Menor"}
+                  id={precioMenor.id}
                 />
               </Grid>
             ) : null}
@@ -131,6 +135,7 @@ export default function Mercado() {
                   icon={mayorVolumen.icon}
                   priceChange1d={mayorVolumen.priceChange1d}
                   precio={"Mayor volumen"}
+                  id={mayorVolumen.id}
                 />
               </Grid>
             ) : null}
@@ -142,6 +147,7 @@ export default function Mercado() {
                   icon={masPopular.icon}
                   priceChange1d={masPopular.priceChange1d}
                   precio={"Mas Popular"}
+                  id={masPopular.id}
                 />
               </Grid>
             ) : null}
@@ -153,6 +159,7 @@ export default function Mercado() {
                   icon={menosPopular.icon}
                   priceChange1d={menosPopular.priceChange1d}
                   precio={"Menos Popular"}
+                  id={menosPopular.id}
                 />
               </Grid>
             ) : null}
