@@ -1,5 +1,6 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React,{useEffect} from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { getCriptosIniciales } from "../../../redux/actions";
 import Cripto from "../cripto/cripto";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
@@ -10,6 +11,12 @@ import SearchBar from "../../searchBar/searchBar";
 import Panel from "../../CriptosSearch/panel/panel";
 
 export default function InicioCripto() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getCriptosIniciales());  
+  })
+
   const criptos = useSelector((state) => state.criptos);
 
   return (
