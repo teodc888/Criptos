@@ -25,7 +25,7 @@ export default function CardMercado(props) {
           {props.name}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-          {props.price}
+          ${props.price.toFixed(2)}
           </Typography>
           <Typography component="div" variant="h6">
               {props.priceChange1d}

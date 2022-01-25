@@ -20,6 +20,8 @@ export default function Cripto(props) {
       return "https://thumbs.dreamstime.com/b/usd-coin-usdc-digital-stablecoin-icono-220015622.jpg";
     } else if (props.symbol === "ADA") {
       return "https://www.creativefabrica.com/wp-content/uploads/2021/06/14/Cryptocurrency-Cardano-Logo-Graphics-13393853-1.jpg";
+    }else{
+      return props.icon
     }
   }
 
@@ -39,7 +41,7 @@ export default function Cripto(props) {
             {props.name}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            ${props.price}
+            ${props.price.toFixed(2)}
           </Typography>
         </CardContent>
       </CardActionArea>

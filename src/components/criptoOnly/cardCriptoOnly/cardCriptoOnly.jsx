@@ -15,7 +15,7 @@ export default function CardCriptoOnly(props) {
       />
       <CardContent>
         <Typography  gutterBottom variant="h5" component="div">
-          ${props.price}
+          ${props.price.toFixed(2)}
         </Typography>
       </CardContent>
     </Card>

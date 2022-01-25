@@ -3,6 +3,7 @@ import {
     GET_CRIPTOS_TOTAL,
     SEARCH_CRIPTOS,
     GET_CRIPTO_ONLY,
+    FAVORITOS,
 
 } from "../actions/actionsTypes";
 
@@ -10,7 +11,8 @@ const inicialState = {
     criptos: [],
     criptosTotal: [],
     criptosShearch: [],
-    cripto:{}
+    cripto:{},
+    favorito:[]
 
 };
 
@@ -37,7 +39,11 @@ export default function rootReducer(state = inicialState, action) {
                 ...state,
                 cripto: action.payload,
             };
-
+        case FAVORITOS:
+            return {
+                ...state,
+                favorito: [...state.favorito, action.payload],
+            };
         default:
             return state;
     }

@@ -40,3 +40,9 @@
 .tituloCripto{
   text-transform: uppercase;
 }
+
+.imagenCargando{
+  margin: auto;
+  height: 350px;
+  width: 350px;
+}

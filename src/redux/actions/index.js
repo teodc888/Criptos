@@ -5,6 +5,7 @@ import {
     GET_CRIPTOS_TOTAL,
     SEARCH_CRIPTOS,
     GET_CRIPTO_ONLY,
+    FAVORITOS,
 } from "./actionsTypes";
 
 export function getCriptosIniciales() {
@@ -65,4 +66,10 @@ export function getCriptoOnly(cripto) {
       }
     };
   }
-  
+
+export function favoritos(cripto) {
+    return{
+        type: FAVORITOS,
+        payload: cripto
+    }
+}

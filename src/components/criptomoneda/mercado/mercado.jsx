@@ -24,36 +24,50 @@ const columns = [
     renderCell: (params) => <Link to={`/cripto/${params.value}`}>{params.value}</Link>,
   },
   {
+    
     field: "price",
     headerName: "Precio",
-    width: 310,
+    width: 200,
+    renderCell: (params) => <p>${params.value.toFixed(2)}</p>,
 
   },
   {
     field: "priceChange1d",
     headerName: "24 horas cambio",
     type: "number",
-    width: 210,
+    width: 200,
 
   },
   {
     field: "volume",
     headerName: "24 horas Valumen",
     type: "number",
-    width: 410,
+    width: 300,
+    renderCell: (params) => <p>{params.value.toFixed(2)}</p>,
+
 
   },
   {
     field: "marketCap",
     headerName: "Capacidad Mercado",
     type: "number",
-    width: 410,
+    width: 300,
+    renderCell: (params) => <p>{params.value.toFixed(2)}</p>,
+
+  },
+  {
+    field: "availableSupply",
+    headerName: "Suministros Disponibles",
+    type: "number",
+    width: 300,
+    renderCell: (params) => <p>{params.value.toFixed(2)}</p>,
 
   },
 ];
 
 export default function Mercado() {
   const criptos = useSelector((state) => state.criptosTotal);
+  console.log(criptos);
 
   const precioMayor =
     criptos.length > 0
